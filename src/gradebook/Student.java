@@ -5,10 +5,16 @@
  */
 package gradebook;
 
+import java.io.Serializable;
+
 /**
  *
  * @author pc_owner
  */
-public class Student {
+public class Student implements Serializable {
+    private String studentName;
+    public Student (String name) {
+        studentName = name;
+    }
     
 }

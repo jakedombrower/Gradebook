@@ -9,6 +9,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -16,6 +17,7 @@ import java.io.Serializable;
  */
 public class Course implements Serializable {
     private String courseName;
+    private ArrayList<Student> studentList = new ArrayList<Student>();
     public Course (String name) {
         courseName = name;
     }
