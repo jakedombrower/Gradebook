@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author pc_owner
+ * @author jakedombrower
  */
 public class Gradebook implements Serializable {
     private ArrayList<Course> courseList = new ArrayList<Course>();
@@ -50,7 +50,7 @@ public class Gradebook implements Serializable {
       //Load Gradebook from serial file
       try
       {
-         FileInputStream fileIn = new FileInputStream("data/gradebookdata.ser");
+         FileInputStream fileIn = new FileInputStream("gradebookdata.ser");
          ObjectInputStream in = new ObjectInputStream(fileIn);
          g = (Gradebook) in.readObject();
          in.close();
@@ -71,7 +71,7 @@ public class Gradebook implements Serializable {
         try
       {
          FileOutputStream fileOut =
-         new FileOutputStream("data/gradebookdata.ser");
+         new FileOutputStream("gradebookdata.ser");
          ObjectOutputStream out = new ObjectOutputStream(fileOut);
          out.writeObject(this);
          out.close();

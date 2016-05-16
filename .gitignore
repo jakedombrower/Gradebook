@@ -1,2 +1,4 @@
 
 *.ser
+/nbproject/private/
+/build/
