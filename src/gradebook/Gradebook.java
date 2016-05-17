@@ -26,7 +26,7 @@ public class Gradebook implements Serializable {
       Gradebook g = null;
       //Load Gradebook from serial file
       g = loadGradebook();
-      g.listCourses();
+      g.printCourses();
       g.saveGradebookAndQuit();
       
     }
@@ -38,9 +38,12 @@ public class Gradebook implements Serializable {
     public void removeCourse(int i) {
         courseList.remove(i);
     }
-    public void listCourses() {
+    public void printCourses() {
         for(Course c: courseList)
             System.out.println(c);
+    }
+    public ArrayList<Course> getCourses() {
+        return courseList;
     }
     
     

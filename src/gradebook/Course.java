@@ -18,10 +18,12 @@ import java.util.ArrayList;
 public class Course implements Serializable {
     private String courseName;
     private ArrayList<Student> studentList = new ArrayList<Student>();
+    private ArrayList<AssignmentType> aTypeList = new ArrayList<AssignmentType>();
     public Course (String name) {
         courseName = name;
     }
     
+    //TODO: Accessors and modifiers for Course and other classes
     
     @Override
     public String toString() {

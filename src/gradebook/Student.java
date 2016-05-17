@@ -6,6 +6,7 @@
 package gradebook;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -13,6 +14,7 @@ import java.io.Serializable;
  */
 public class Student implements Serializable {
     private String studentName;
+    private ArrayList<Assignment> assignmentList = new ArrayList<Assignment>();
     public Student (String name) {
         studentName = name;
     }
