@@ -23,11 +23,16 @@ public class Gradebook implements Serializable {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-      Gradebook g = null;
+      Gradebook g = new Gradebook();
       //Load Gradebook from serial file
-      g = loadGradebook();
+//      g = loadGradebook();
+      g.addCourse(new Course("APCS"));
+      g.addCourse(new Course("Calculus AB"));
+      g.addCourse(new Course("Physics C"));
       g.printCourses();
-      g.saveGradebookAndQuit();
+      GradebookFrame f = new GradebookFrame(g);
+      f.showFrame();
+//      g.saveGradebookAndQuit();
       
     }
     
@@ -44,6 +49,15 @@ public class Gradebook implements Serializable {
     }
     public ArrayList<Course> getCourses() {
         return courseList;
+    }
+    public String[][] getCoursesForTable() {
+        String[][] ret = new String[courseList.size()][4];
+        int i = 0;
+        for (Course c : courseList) {
+            ret[i][0] = c.toString();
+            i++;
+        }
+        return ret;
     }
     
     
