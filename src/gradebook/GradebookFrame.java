@@ -13,8 +13,7 @@ public class GradebookFrame extends javax.swing.JFrame {
     /**
      * Creates new form GradebookFrame
      */
-    public GradebookFrame(Gradebook g) {
-        gradebook = g;
+    public GradebookFrame() {
         initComponents();
     }
 
@@ -36,13 +35,13 @@ public class GradebookFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            //    new Object [][] {
-                //        {null, null, null, null},
-                //        {null, null, null, null},
-                //        {null, null, null, null},
-                //        {null, null, null, null}
-                //    }
-            gradebook.getCoursesForTable();
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            }
+            //    gradebook.getCoursesForTable();
             ,new String [] {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
@@ -88,7 +87,7 @@ public class GradebookFrame extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public void showFrame() {
+    public static void main(String[] args) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -115,7 +114,7 @@ public class GradebookFrame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GradebookFrame(gradebook).setVisible(true);
+                new GradebookFrame().setVisible(true);
             }
         });
     }

@@ -30,8 +30,9 @@ public class Gradebook implements Serializable {
       g.addCourse(new Course("Calculus AB"));
       g.addCourse(new Course("Physics C"));
       g.printCourses();
-      GradebookFrame f = new GradebookFrame(g);
-      f.showFrame();
+      GradebookFrame f = new GradebookFrame();
+      f.setVisible(true);
+      
 //      g.saveGradebookAndQuit();
       
     }
