@@ -24,4 +24,10 @@ public class AssignmentType implements Serializable {
     public int getWeight() {
         return weight;
     }
+    public void setName(String n) {
+        name = n;
+    }
+    public void setWeight(int w) {
+        weight = w;
+    }
 }
