@@ -20,7 +20,51 @@ public class Course implements Serializable {
         courseName = name;
     }
     
-    //TODO: Accessors and modifiers for Course and other classes
+    public String[] getStudentsForTable() {
+        String[] ret = new String[studentList.size()];
+        int i = 0;
+        for (Student s : studentList) {
+            ret[i] = s.getName();
+            i++;
+        }
+        return ret;
+    }
+    public String[] getAssignmentTypesForTable() {
+        String[] ret = new String[aTypeList.size()];
+        int i = 0;
+        for (AssignmentType a : aTypeList) {
+            ret[i] = a.getName();
+            i++;
+        }
+        return ret;
+    }
+    public ArrayList<AssignmentType> getAssignmentTypes() {
+        return aTypeList;
+    }
+    public Student getStudent(int i) {
+        return studentList.get(i);
+    }
+    public void addStudent(Student s) {
+        studentList.add(s);
+    }
+    public void removeStudent(int i) {
+        studentList.remove(i);
+    }
+    public AssignmentType getAssignmentType(int i) {
+        return aTypeList.get(i);
+    }
+    public void addAType(AssignmentType a) {
+        aTypeList.add(a);
+    }
+    public void removeAType(int i) {
+        aTypeList.remove(i);
+    }
+    public String getName() {
+        return courseName;
+    }
+    public void editName(String n) {
+        courseName = n;
+    }
     
     @Override
     public String toString() {

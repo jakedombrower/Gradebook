@@ -29,4 +29,10 @@ public class Assignment implements Serializable {
     public int getScore() {
         return aScore;
     }
+    public void setName(String n) {
+        aName = n;
+    }
+    public void setScore(int s) {
+        aScore = s;
+    }
 }

@@ -5,6 +5,7 @@
  */
 package gradebook;
 
+import java.awt.event.WindowListener;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -23,19 +24,17 @@ public class Gradebook implements Serializable {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-      Gradebook g = new Gradebook();
+      Gradebook g = null;
       //Load Gradebook from serial file
-//      g = loadGradebook();
-      g.addCourse(new Course("APCS"));
-      g.addCourse(new Course("Calculus AB"));
-      g.addCourse(new Course("Physics C"));
-      g.printCourses();
-      GradebookFrame f = new GradebookFrame();
+      g = loadGradebook();
+      GradebookFrame f = new GradebookFrame(g);
+      WindowListener exitListener = new CustomWindowListener(g);
+      f.addWindowListener(exitListener);
       f.setVisible(true);
       
-//      g.saveGradebookAndQuit();
-      
     }
+
+    
     
 //  Accessors and Modifiers for Gradebook courses
     public void addCourse(Course c) {
@@ -44,6 +43,9 @@ public class Gradebook implements Serializable {
     public void removeCourse(int i) {
         courseList.remove(i);
     }
+    public Course getCourse(int i) {
+        return courseList.get(i);
+    }
     public void printCourses() {
         for(Course c: courseList)
             System.out.println(c);
@@ -51,11 +53,11 @@ public class Gradebook implements Serializable {
     public ArrayList<Course> getCourses() {
         return courseList;
     }
-    public String[][] getCoursesForTable() {
-        String[][] ret = new String[courseList.size()][4];
+    public String[] getCoursesForTable() {
+        String[] ret = new String[courseList.size()];
         int i = 0;
         for (Course c : courseList) {
-            ret[i][0] = c.toString();
+            ret[i] = c.toString();
             i++;
         }
         return ret;
@@ -101,6 +103,8 @@ public class Gradebook implements Serializable {
           i.printStackTrace();
       }
     }
+
+    
     
     
 }
